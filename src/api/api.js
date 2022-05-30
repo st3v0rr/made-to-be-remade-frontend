@@ -1,7 +1,6 @@
-const hostUrl = "localhost:3000";
 
 export async function getShoe(id) {
-    return await fetch(hostUrl + "/shoes/" + id);
+    return await fetch("/shoes/" + id);
 }
 
 export function getShoeMock(id) {

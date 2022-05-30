@@ -1,6 +1,6 @@
 import './App.scss';
 import React from 'react';
-import {getShoe, getShoeMock} from "../api/api";
+import {getShoe} from "../api/api";
 
 
 class App extends React.Component {
@@ -13,9 +13,9 @@ class App extends React.Component {
     }
 
     async componentDidMount() {
-        const shoe = getShoeMock(1);
-       // const response = getShoe(1);
-      //  let shoe = await response.json();
+       // const shoe = getShoeMock(1);
+        const response = await getShoe(1);
+        let shoe = await response.json();
         this.setState({shoe});
     }
 
