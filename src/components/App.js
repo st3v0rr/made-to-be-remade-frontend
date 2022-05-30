@@ -1,40 +1,29 @@
 import './App.scss';
 import React from 'react';
-import {getShoe} from "../api/api";
-
+import {
+    Route, Routes
+} from "react-router-dom";
+import Shop from "./shop/Shop";
+import Landing from "./landing/Landing";
+import Header from "./header/Header";
 
 class App extends React.Component {
 
     constructor() {
         super();
-        this.state = {
-            shoe: undefined,
-        }
-    }
-
-    async componentDidMount() {
-       // const shoe = getShoeMock(1);
-        const response = await getShoe(1);
-        let shoe = await response.json();
-        this.setState({shoe});
+        this.state = {}
     }
 
     render() {
-        if(this.state.shoe === undefined) {
-            return <div/>
-        }
-        return (<div className="App">
-            <header className="App-header">
-                <b>Senden sie ihren Schuh zurück und kassieren Sie Punkte!</b>
-
-                <div className="shoe-panel">
-                    <span>Nummer: {this.state.shoe.id}</span>
-                    <span>Owner: {this.state.shoe.ownerAdressing}</span>
-                    <span>Beschreibung: {this.state.shoe.description}</span>
-                    <img src={this.state.shoe.pictureUrl} alt="Bild"/>
-                </div>
-            </header>
-        </div>);
+        return (
+            <div className="App">
+                <Header/>
+                <Routes>
+                    <Route path="/landing" element={<Landing/>}/>
+                    <Route path="/shop" element={<Shop/>}/>
+                    <Route path="/" element={<Shop/>}/>
+                </Routes>
+            </div>);
     }
 }
 
