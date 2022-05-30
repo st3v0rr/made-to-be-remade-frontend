@@ -13,7 +13,8 @@ class Landing extends React.Component {
 
     async componentDidMount() {
         // const shoe = getShoeMock(1);
-        const response = await getShoe(0x967e6740dbec357dF5d290f7703dD59765C729d1);
+        const lastItem = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+        const response = await getShoe(lastItem);
         let shoe = await response.json();
         this.setState({shoe});
     }
@@ -22,6 +23,7 @@ class Landing extends React.Component {
         if (this.state.shoe === undefined) {
             return <div/>
         }
+
         return (
             <div className="App">
                 <b>Senden sie ihren Schuh zurück und kassieren Sie Punkte!</b>
