@@ -20,8 +20,9 @@ class Shop extends React.Component {
     }
 
     handleClick = async (product) => {
-        await buyProduct(product);
-        this.setState({success_enabled: true});
+        const qr = await buyProduct(product);
+        const blob = await qr.blob();
+        this.setState({success_enabled: true, img: URL.createObjectURL(blob)});
     }
 
     render() {
@@ -31,7 +32,9 @@ class Shop extends React.Component {
                 <div className="alert">
                     <span>Artikel erfolgreich gekauft!</span>
                 </div> : null}
-                {this.state.products.map((product, key) => {
+                {this.state.img &&
+                    <img className="qrcode" src={this.state.img} alt="qrcode"/>}
+                {!this.state.img && this.state.products.map((product, key) => {
                     return <div className="box" key={key}>
                         <div className="box_content">
                             <img

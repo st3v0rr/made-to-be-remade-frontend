@@ -1,17 +1,19 @@
+const hosturl = "http://localhost:8080";
 
 export async function getShoe(id) {
-    return await fetch("/shoes/" + id);
+    return await fetch(hosturl + "/shoes/" + id);
 }
 
 export async function getAllProducts() {
-    return await fetch("/products");
+    return await fetch(hosturl + "/products");
 }
 
 export async function buyProduct(product) {
-    return await fetch("/products", {
+    product.ownerAdress = "0xb6bE89974B07F0bE1562E5F453b912368A7bF139";
+    return await fetch(hosturl + "/products", {
         method: 'POST',
         headers: {
-            'Accept': 'application/json',
+            'Accept': 'application/jpeg',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(product)
