@@ -1,29 +1,39 @@
-.App {
-  text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.landing {
+  padding: 80px 10px;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .shoe-panel {
-  margin-top: 50px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+  border: 2px solid rgba(0,0,0,0.3);
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  padding: 16px;
+  width: 50%;
+  background-color: #ebeef0;
+
+  button {
+    max-width: 100px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
 
   * {
     margin-top: 16px;
   }
 
   img {
-    box-shadow: 2px 2px 12px white;
+    width: 60%;
   }
 }

@@ -3,14 +3,6 @@ import React from 'react';
 
 class Header extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {}
-    }
-
-    async componentDidMount() {
-    }
-
     render() {
         return (
             <header className="header">

@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
 
 }
 
@@ -14,17 +13,3 @@
   color: white;
 }
 
-.shoe-panel {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  * {
-    margin-top: 16px;
-  }
-
-  img {
-    box-shadow: 2px 2px 12px white;
-  }
-}

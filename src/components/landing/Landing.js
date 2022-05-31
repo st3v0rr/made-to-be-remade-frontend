@@ -1,6 +1,6 @@
 import './Landing.scss';
 import React from 'react';
-import {getShoe} from "../../api/api";
+import {buyProduct, getShoe, getShoeMock} from "../../api/api";
 
 class Landing extends React.Component {
 
@@ -12,11 +12,16 @@ class Landing extends React.Component {
     }
 
     async componentDidMount() {
-        // const shoe = getShoeMock(1);
-        const lastItem = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
-        const response = await getShoe(lastItem);
-        let shoe = await response.json();
+         const shoe = getShoeMock(1);
+      //  const lastItem = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+       // const response = await getShoe(lastItem);
+      //  let shoe = await response.json();
         this.setState({shoe});
+    }
+
+    handleClick = async () => {
+       // const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        //console.log(accounts);
     }
 
     render() {
@@ -25,14 +30,15 @@ class Landing extends React.Component {
         }
 
         return (
-            <div className="App">
-                <b>Senden sie ihren Schuh zurück und kassieren Sie Punkte!</b>
+            <div className="landing">
+                <div><b>Senden sie ihren Schuh zurück und kassieren Sie Punkte!</b></div>
 
                 <div className="shoe-panel">
-                    <span>Nummer: {this.state.shoe.id}</span>
-                    <span>Owner: {this.state.shoe.ownerAdressing}</span>
-                    <span>Beschreibung: {this.state.shoe.description}</span>
+                    <div>Nummer: {this.state.shoe.id}</div>
+                    <div>Owner: {this.state.shoe.ownerAdressing}</div>
+                    <div>Beschreibung: {this.state.shoe.description}</div>
                     <img src={this.state.shoe.pictureUrl} alt="Bild"/>
+                    <button onClick={() => this.handleClick()}>Recyclen</button>
                 </div>
             </div>);
     }
