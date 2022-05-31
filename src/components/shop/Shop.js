@@ -41,7 +41,7 @@ class Shop extends React.Component {
                                 src={product.imageUrl}
                                 alt="product"/>
                             <button onClick={() => this.handleClick(product)}>Kaufen</button>
-                            <div className="price">{product.price}</div>
+                            <div className="price">{product.price} €</div>
                         </div>
                     </div>
                 })}
