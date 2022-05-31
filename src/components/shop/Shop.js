@@ -30,7 +30,7 @@ class Shop extends React.Component {
             <div className="Shop">
                 {this.state.success_enabled ?
                 <div className="alert">
-                    <span>Artikel erfolgreich gekauft!</span>
+                    <span>Product purchased!</span>
                 </div> : null}
                 {this.state.img &&
                     <img className="qrcode" src={this.state.img} alt="qrcode"/>}
@@ -41,7 +41,7 @@ class Shop extends React.Component {
                             <img
                                 src={product.imageUrl}
                                 alt="product"/>
-                            <button onClick={() => this.handleClick(product)}>Kaufen</button>
+                            <button onClick={() => this.handleClick(product)}>Buy now!</button>
                             <div className="price">{product.price} €</div>
                         </div>
                     </div>
