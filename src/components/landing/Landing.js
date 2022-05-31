@@ -51,9 +51,6 @@ class Landing extends React.Component {
                 }
                 console.log("Hash of the transaction: " + res)
             })
-
-        // const accounts = await window.ethereum.request({method: 'eth_requestAccounts'});
-        // console.log(accounts);
     }
 
     render() {
