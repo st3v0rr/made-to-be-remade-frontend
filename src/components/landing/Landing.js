@@ -12,10 +12,9 @@ class Landing extends React.Component {
     }
 
     async componentDidMount() {
-         const shoe = getShoeMock(1);
-      //  const lastItem = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
-       // const response = await getShoe(lastItem);
-      //  let shoe = await response.json();
+        const lastItem = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+        const response = await getShoe(lastItem);
+        let shoe = await response.json();
         this.setState({shoe});
     }
 
