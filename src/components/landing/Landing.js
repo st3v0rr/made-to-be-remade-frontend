@@ -1,6 +1,6 @@
 import './Landing.scss';
 import React from 'react';
-import {buyProduct, getShoe, getShoeMock} from "../../api/api";
+import {getShoe} from "../../api/api";
 
 class Landing extends React.Component {
 
@@ -19,8 +19,8 @@ class Landing extends React.Component {
     }
 
     handleClick = async () => {
-       // const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-        //console.log(accounts);
+       const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        console.log(accounts);
     }
 
     render() {
