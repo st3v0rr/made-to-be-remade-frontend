@@ -37,6 +37,7 @@ class Shop extends React.Component {
                 {!this.state.img && this.state.products.map((product, key) => {
                     return <div className="box" key={key}>
                         <div className="box_content">
+                            <div className="title">{product.name}</div>
                             <img
                                 src={product.imageUrl}
                                 alt="product"/>

@@ -36,6 +36,13 @@
       width: 350px;
       height: 350px;
 
+      .title {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        font-weight: bold;
+      }
+
       .price {
         position: absolute;
         bottom: 14px;
@@ -61,6 +68,7 @@
 
       img {
         margin-bottom: 50px;
+        margin-top: 50px;
         width: 80%;
         height: auto;
       }
