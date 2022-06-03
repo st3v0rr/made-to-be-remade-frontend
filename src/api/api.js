@@ -1,3 +1,6 @@
+import Web3 from "web3";
+import React from 'react';
+
 const hosturl = "http://localhost:8080";
 
 export async function getProduct(id) {
@@ -9,7 +12,10 @@ export async function getAllProducts() {
 }
 
 export async function buyProduct(product) {
-    product.ownerAdress = "0x6d82e50bdC657B1a2b36acb925801222fF0cADDB";
+    var win = window.ethereum.selectedAddress;
+    console.log(win)
+    product.ownerAdress = win;
+
     return await fetch(hosturl + "/products", {
         method: 'POST',
         headers: {
